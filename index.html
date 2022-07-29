@@ -5,6 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Bar</title>
+
+    <style>
+body{
+    font-family: Poppins, calibri
+}
+h1, p{
+    margin: 0;
+}
+
+#search{
+    padding: 8px 10px;
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 5px;
+}
+#search:focus{
+    outline: none;
+}
+.blocks{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 290px));
+    grid-gap: 20px;
+    margin-top: 20px;
+}
+.block{
+    border: 1px solid rgba(0, 0, 0, 0);
+    width: 250px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #FFF;
+    filter: drop-shadow(rgba(0, 0, 0, .08) 5px 5px 10px);
+}
+
+    </style>
+
 </head>
 <body>
 
