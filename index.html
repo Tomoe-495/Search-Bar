@@ -83,5 +83,36 @@ h1, p{
 
     </div>
 
+    <script>
+
+let ser = document.getElementById('search');
+let heads = document.getElementsByClassName('head');
+let blocks = document.getElementsByClassName('block');
+
+ser.onkeyup = () => {
+    let search = ser.value.toLowerCase();
+    let view = [];
+    let i = 0;
+
+    for(let h of heads){
+        h = h.innerHTML.toLowerCase();
+        if(h.includes(search)){
+            view.push(blocks[i]);
+        }
+        i++
+    }
+
+    for(let b of blocks){
+        b.style.display = 'none';
+    }
+
+    for(let v of view){
+        v.style.display = 'block';
+    }
+
+}
+
+    </script>
+
 </body>
 </html>
