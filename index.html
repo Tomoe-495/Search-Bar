@@ -35,6 +35,23 @@ h1, p{
     border-radius: 10px;
     background-color: #FFF;
     filter: drop-shadow(rgba(0, 0, 0, .08) 5px 5px 10px);
+    animation: fade 1000ms ease;
+}
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.nothing{
+    font-size: 50px;
+    color: rgb(180, 180, 180);
+    font-weight: 800;
+    margin-left: 50px;
+    display: none;
 }
 
     </style>
@@ -83,11 +100,14 @@ h1, p{
 
     </div>
 
+    <p class="nothing">No Results (ﾟДﾟ*)ﾉ</p>
+
     <script>
 
 let ser = document.getElementById('search');
 let heads = document.getElementsByClassName('head');
 let blocks = document.getElementsByClassName('block');
+let non = document.getElementsByClassName('nothing')[0];
 
 ser.onkeyup = () => {
     let search = ser.value.toLowerCase();
@@ -106,9 +126,15 @@ ser.onkeyup = () => {
         b.style.display = 'none';
     }
 
-    for(let v of view){
-        v.style.display = 'block';
+    if(view.length == 0){
+        non.style.display = 'block';
+    }else{
+        non.style.display = 'none';
+        for(let v of view){
+            v.style.display = 'block';
+        }
     }
+
 
 }
 
