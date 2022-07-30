@@ -45,7 +45,9 @@ h1, p{
     font-weight: 800;
     margin-left: 50px;
     display: none;
+    animation: fadein 300ms ease-out;
 }
+@keyframes fadein{0%{opacity:0;transform:translateX(-50px);}50%{opacity: 0.5;transform:translateX(50px);}100%{opacity:1;transform:translateX(0);}}
 
     </style>
 
@@ -103,6 +105,10 @@ let blocks = document.getElementsByClassName('block');
 let non = document.getElementsByClassName('nothing')[0];
 
 ser.onkeyup = () => {
+    for(let b of blocks){
+        b.style.display = 'none';
+    }
+
     let search = ser.value.toLowerCase();
     let view = [];
     let i = 0;
@@ -113,10 +119,6 @@ ser.onkeyup = () => {
             view.push(blocks[i]);
         }
         i++
-    }
-
-    for(let b of blocks){
-        b.style.display = 'none';
     }
 
     if(view.length == 0){
